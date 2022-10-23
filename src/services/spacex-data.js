@@ -6,8 +6,9 @@ export const fetchClosestStarlinkSatellites = async (latitude, longitude, satell
   try {
     // TODO: Add user feedback
     const response = await fetch(`${BASE_URL}?${queryParams}`).then(response => response.json());
-    console.log(response)
+    return response;
   } catch (error) {
     // TODO: handle error
   }
+
 }

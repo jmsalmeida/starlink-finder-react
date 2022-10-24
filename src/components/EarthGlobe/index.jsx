@@ -10,6 +10,7 @@ export function EarthGlobe({ satellitesData }) {
 
   return (
     <Globe
+      width={800}
       pointAltitude="size"
       pointsData={pointsData}
       globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"

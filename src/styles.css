@@ -1,0 +1,91 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  background-image: url('https://unpkg.com/three-globe/example/img/night-sky.png');
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px;
+}
+
+.page-title {
+  font-size: 3em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.container {
+  /* display: flex; */
+}
+
+.form-container {
+  margin: 2rem;
+  padding: 2rem;
+  color: #f8f8f9;
+  background: #090506;
+  background: linear-gradient(to bottom, #090506, #070709);
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.9);
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inputs-line {
+  display: flex;
+  margin: 10px 0 40px 0;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.input-container input {
+  border-radius: 4px;
+  box-shadow: none;
+  margin: 8px;
+  padding: 8px 4px;
+}
+
+.input-container span {
+  margin-left: 8px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: capitalize;
+}
+
+.buttons-line button {
+  margin: 8px;
+  padding: 8px 16px;
+  font-size: 1em;
+  font-weight: 600;
+  text-transform: capitalize;
+  border: none;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  line-height: 2;
+}
+
+.buttons-line .secondary-button {
+  color: #fff;
+  background-color: #3C3B6E;
+}
+
+.buttons-line .primary-button {
+  color: #fff;
+  background-color: #B22234;
+}

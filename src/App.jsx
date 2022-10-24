@@ -1,12 +1,12 @@
 import React from 'react';
 import { GetClosestSatellitesForm } from './components/GetClosestSatellitesForm';
+import './styles.css';
 
 function App() {
   return (
-    <>
-      <h1>Starlinks Finder</h1>
+    <div className='main-container'>
       <GetClosestSatellitesForm />
-    </>
+    </div>
   )
 }
 

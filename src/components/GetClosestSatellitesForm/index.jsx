@@ -9,6 +9,8 @@ export function GetClosestSatellitesForm() {
   const [starlinksData, setStarlinksData] = useState([]);
   const [satellitesAmount, setSatellitesAmount] = useState('');
 
+  // TODO: Add tests checking if the method will set
+  // latitude and longitude states with valid values
   const getCurrentLocation = async () => {
     await navigator.geolocation.getCurrentPosition(position => {
       setLatitude(position.coords.latitude);
@@ -16,6 +18,9 @@ export function GetClosestSatellitesForm() {
     })
   }
 
+  // TODO: Test handleSubmit is calling the fetchClosestStarlinkSatellites method
+  // with the expected params. To avoid test perform external requeste the
+  // method fetchClosestStarlinkSatellites should be mocked
   const handleSubmit = async event => {
     event.preventDefault();
     const closestSatellites = await fetchClosestStarlinkSatellites(latitude, longitude, satellitesAmount);
@@ -23,6 +28,7 @@ export function GetClosestSatellitesForm() {
     window.scrollTo(0, document.body.scrollHeight);
   }
 
+  // TODO: Test clearLocation is clearing the expected properties
   const clearLocation = () => {
     setLatitude('');
     setLongitude('');
@@ -34,9 +40,11 @@ export function GetClosestSatellitesForm() {
     <div className='container'>
       <form className='form-container' onSubmit={handleSubmit}>
         <h1 className='page-title'>Starlinks Finder</h1>
+
         <div className='inputs-line'>
           <label className='input-container'>
             <span>Latitude:</span>
+
             <input
               required
               type="number"
@@ -50,6 +58,7 @@ export function GetClosestSatellitesForm() {
 
           <label className='input-container'>
             <span>Longitude:</span>
+
             <input
               required
               type="number"
@@ -63,6 +72,7 @@ export function GetClosestSatellitesForm() {
 
           <label className='input-container'>
             <span>Satellites amount:</span>
+
             <input
               min='1'
               required
@@ -78,11 +88,20 @@ export function GetClosestSatellitesForm() {
 
         <div className='buttons-line'>
           <button type='button' onClick={clearLocation}>clear location</button>
-          {supportLocation && <button type="button" className='secondary-button' onClick={getCurrentLocation}>get your location</button>}
+          {supportLocation && (
+            <button
+              type="button"
+              className='secondary-button'
+              onClick={getCurrentLocation}
+            >
+                get your location
+            </button>
+          )}
           <button type='submit' className='primary-button'>find starlinks</button>
         </div>
       </form>
 
+      {/* TODO: Mock the EarthGlobe component and only check if its being rendered */}
       <EarthGlobe satellitesData={starlinksData} />
     </div>
   )
